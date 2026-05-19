@@ -263,14 +263,10 @@ morveth.ev.on("contacts.set", () => {
 console.log(cor.roxo("[CONTACTS] Contacts loaded."));
 });
 
-/*morveth.ev.process((events) => {
-  console.log(JSON.stringify(events, null, 2))
-});*/
 //=========== MESSAGES ===========\\
 morveth.ev.on("messages.upsert", async ({ messages }) => {
 try {
 const info = messages?.[0];
-console.log(JSON.stringify(info, null, 2))
 if (!info || !info.message) return;
 if (info.key?.remoteJid === "status@broadcast") return;
 
